@@ -1,0 +1,9 @@
+pandas==2.0.3
+numpy==1.24.4
+pytz==2025.2
+tzdata==2025.2
+python-dateutil==2.9.0.post0
+six==1.17.0
+fastapi==0.100.0
+uvicorn==0.23.1
+python-multipart==0.0.6

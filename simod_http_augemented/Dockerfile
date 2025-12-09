@@ -8,12 +8,8 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install dependencies for the HTTP wrapper
-# Copy pre-downloaded wheels to avoid SSL issues
-COPY wheels /tmp/wheels
-RUN pip3 install --no-index --find-links /tmp/wheels \
-    pandas numpy pytz tzdata python-dateutil six \
-    fastapi uvicorn python-multipart && \
-    rm -rf /tmp/wheels
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Create storage directory
 RUN mkdir -p /tmp/simod
